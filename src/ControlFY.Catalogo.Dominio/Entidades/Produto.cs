@@ -1,10 +1,10 @@
-﻿using ControlFY.Comum.Dominio.Entidades;
-using System;
+﻿using System;
 
 namespace ControlFY.Catalogo.Dominio.Entidades
 {
-    public class Produto : EntidadeBase
+    public class Produto
     {
+        public long Id { get; private set; }
         public string Nome { get; private set; }
         public string Descricao { get; private set; }
         public decimal Valor { get; private set; }
@@ -29,7 +29,7 @@ namespace ControlFY.Catalogo.Dominio.Entidades
             DataCadastro = DateTime.Now;
         }
 
-        private void AtualizarProduto(string nome, string descricao, decimal valor, long categoriaId, long fornecedorId)
+        public void AtualizarProduto(string nome, string descricao, decimal valor, long categoriaId, long fornecedorId)
         {
             Nome = nome;
             Descricao = descricao;

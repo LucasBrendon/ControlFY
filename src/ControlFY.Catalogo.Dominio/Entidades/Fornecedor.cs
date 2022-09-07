@@ -1,12 +1,12 @@
 ﻿using ControlFY.Catalogo.Dominio.Enums;
-using ControlFY.Comum.Dominio.Entidades;
 using System;
 using System.Collections.Generic;
 
 namespace ControlFY.Catalogo.Dominio.Entidades
 {
-    public class Fornecedor : EntidadeBase
+    public class Fornecedor
     {
+        public long Id { get; private set; }
         public string Nome { get; private set; }
         public string Documento { get; private set; }
         public ETipoDocumento TipoDocumento { get; private set; }
@@ -32,7 +32,7 @@ namespace ControlFY.Catalogo.Dominio.Entidades
             DataCadastro = DateTime.Now;
         }
 
-        private void AtualizarFornecedor(string nome, string documento, ETipoDocumento tipoDocumento, string telefone, string email, Endereco endereco)
+        public void AtualizarFornecedor(string nome, string documento, ETipoDocumento tipoDocumento, string telefone, string email, Endereco endereco)
         {
             Nome = nome;
             Documento = documento;

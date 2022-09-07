@@ -1,11 +1,11 @@
-﻿using ControlFY.Comum.Dominio.Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace ControlFY.Catalogo.Dominio.Entidades
 {
-    public class Categoria : EntidadeBase
+    public class Categoria
     {
+        public long Id { get; private set; }
         public string Nome { get; private set; }
         public DateTime DataCadastro { get; private set; }
         public DateTime? DataAtualizacao { get; private set; }
@@ -21,7 +21,7 @@ namespace ControlFY.Catalogo.Dominio.Entidades
             DataCadastro = DateTime.Now;
         }
 
-        private void AtualizarCategoria(string nome)
+        public void AtualizarCategoria(string nome)
         {
             Nome = nome;
             DataAtualizacao = DateTime.Now;

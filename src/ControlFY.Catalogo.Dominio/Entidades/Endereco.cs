@@ -1,9 +1,8 @@
-﻿using ControlFY.Comum.Dominio.Entidades;
-
-namespace ControlFY.Catalogo.Dominio.Entidades
+﻿namespace ControlFY.Catalogo.Dominio.Entidades
 {
-    public class Endereco : EntidadeBase
+    public class Endereco
     {
+        public long Id { get; private set; }
         public string Cep { get; private set; }
         public string Logradouro { get; private set; }
         public string Numero { get; private set; }
@@ -29,7 +28,7 @@ namespace ControlFY.Catalogo.Dominio.Entidades
             Pais = pais;
         }
 
-        private void AtualizarEndereco(string cep, string logradouro, string numero, string bairro, string cidade, string estado, string pais)
+        public void AtualizarEndereco(string cep, string logradouro, string numero, string bairro, string cidade, string estado, string pais)
         {
             Cep = cep;
             Logradouro = logradouro;
