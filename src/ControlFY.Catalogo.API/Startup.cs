@@ -1,4 +1,5 @@
 using ControlFY.Catalogo.API.Config;
+using ControlFY.Catalogo.API.Filtros;
 using ControlFY.Catalogo.Persistencia;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +14,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FluentValidation.AspNetCore;
+using ControlFY.Catalogo.Aplicacao.Categorias.Comandos.Criar;
+using Newtonsoft.Json;
 
 namespace ControlFY.Catalogo.API
 {
@@ -31,6 +35,13 @@ namespace ControlFY.Catalogo.API
             services.ResolverDependenciasPersistencia(Configuration);
 
             services.AddControllers();
+
+            services.AddHttpContextAccessor();
+            services
+                .AddMvc(options => options.Filters.Add(typeof(FiltroExcecao)))
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CriarCategoriaValidador>())
+                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ControlFY.Catalogo.API", Version = "v1" });
