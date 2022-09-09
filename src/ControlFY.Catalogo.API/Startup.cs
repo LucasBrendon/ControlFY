@@ -1,4 +1,5 @@
 using ControlFY.Catalogo.API.Config;
+using ControlFY.Catalogo.Persistencia;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,10 +25,10 @@ namespace ControlFY.Catalogo.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.ResolverDependencias(Configuration);
+            services.ResolverDependenciasPersistencia(Configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -36,7 +37,6 @@ namespace ControlFY.Catalogo.API
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

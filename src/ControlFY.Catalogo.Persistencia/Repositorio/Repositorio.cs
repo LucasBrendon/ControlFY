@@ -23,7 +23,7 @@ namespace ControlFY.Catalogo.Persistencia.Repositorio
             return await _contexto.Set<T>().AsNoTracking().ToListAsync();
         }
 
-        public async Task<T> ConsultarPorId(Expression<Func<T, bool>> predicado)
+        public virtual async Task<T> ConsultarPorId(Expression<Func<T, bool>> predicado)
         {
             return await _contexto.Set<T>().AsNoTracking().Where(predicado).FirstOrDefaultAsync();
         }
