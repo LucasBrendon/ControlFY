@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace ControlFY.Catalogo.Aplicacao.Categorias.Comandos.Remover
 {
-    public class RemoverCategoriaComandoHandler : IRequestHandler<RemoverCategoriaComando>
+    public class RemoverCategoriaHandler : IRequestHandler<RemoverCategoriaComando>
     {
         private readonly ICategoriaRepositorio _categoriaRepositorio;
 
-        public RemoverCategoriaComandoHandler(ICategoriaRepositorio categoriaRepositorio)
+        public RemoverCategoriaHandler(ICategoriaRepositorio categoriaRepositorio)
         {
             _categoriaRepositorio = categoriaRepositorio;
         }

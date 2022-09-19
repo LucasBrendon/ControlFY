@@ -21,26 +21,29 @@ namespace ControlFY.Catalogo.Dominio.Entidades
         {
         }
 
-        public Fornecedor(string nome, string documento, ETipoDocumento tipoDocumento, string telefone, string email, Endereco endereco)
+        public Fornecedor(string nome, string documento, ETipoDocumento tipoDocumento, string telefone, string email)
         {
             Nome = nome;
             Documento = documento;
             TipoDocumento = tipoDocumento;
             Telefone = telefone;
             Email = email;
-            Endereco = endereco;
             DataCadastro = DateTime.Now;
         }
 
-        public void AtualizarFornecedor(string nome, string documento, ETipoDocumento tipoDocumento, string telefone, string email, Endereco endereco)
+        public void AtualizarFornecedor(string nome, string documento, ETipoDocumento tipoDocumento, string telefone, string email)
         {
             Nome = nome;
             Documento = documento;
             TipoDocumento = tipoDocumento;
             Telefone = telefone;
             Email = email;
-            Endereco = endereco;
             DataAtualizacao = DateTime.Now;
+        }
+
+        public void VincularEndereco(Endereco endereco)
+        {
+            Endereco = endereco;
         }
     }
 }

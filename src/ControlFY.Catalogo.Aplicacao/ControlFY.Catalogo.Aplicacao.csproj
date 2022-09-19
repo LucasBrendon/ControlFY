@@ -7,6 +7,9 @@
   <ItemGroup>
     <Folder Include="Categorias\Notificacoes\" />
     <Folder Include="Comum\Contratos\Servicos\" />
+    <Folder Include="Fornecedores\Notificacoes\" />
+    <Folder Include="Produtos\Consultas\ListarTodos\" />
+    <Folder Include="Produtos\Notificacoes\" />
   </ItemGroup>
 
   <ItemGroup>

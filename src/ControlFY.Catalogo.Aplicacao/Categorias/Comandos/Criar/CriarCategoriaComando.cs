@@ -4,7 +4,7 @@ using MediatR;
 
 namespace ControlFY.Catalogo.Aplicacao.Categorias.Comandos.Criar
 {
-    public class CriarCategoriaComando : CriarCategoriaComandoBase, IRequest<CategoriaViewModel>
+    public class CriarCategoriaComando : CategoriaComandoBase, IRequest<CategoriaViewModel>
     {
         
     }

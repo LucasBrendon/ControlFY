@@ -2,9 +2,9 @@
 
 namespace ControlFY.Catalogo.Aplicacao.Categorias.Comandos.Base
 {
-    public abstract class CriarCategoriaValidadorBase<T> : AbstractValidator<T> where T : CriarCategoriaComandoBase
+    public abstract class CategoriaValidadorBase<T> : AbstractValidator<T> where T : CategoriaComandoBase
     {
-        public CriarCategoriaValidadorBase()
+        public CategoriaValidadorBase()
         {
             RuleFor(x => x.Nome)
                 .NotEmpty()

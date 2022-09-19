@@ -27,10 +27,10 @@ namespace ControlFY.Catalogo.API.Controllers
         }
 
         [HttpGet]
-        [Route("consultar-por-id")]
-        public async Task<IActionResult> ConsultarPorId(long id)
+        [Route("listar-por-id")]
+        public async Task<IActionResult> ConsultarPorId(ListarCategoriaPorIdConsulta consulta)
         {
-            return Ok(await _mediator.Send(new ConsultaPorIdComando(id)));
+            return Ok(await _mediator.Send(consulta));
         }
 
         [HttpPost]

@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ControlFY.Catalogo.Aplicacao.Categorias.Comandos.Criar
 {
-    public class CriarCategoriaComandoHandler : IRequestHandler<CriarCategoriaComando, CategoriaViewModel>
+    public class CriarCategoriaHandler : IRequestHandler<CriarCategoriaComando, CategoriaViewModel>
     {
         private readonly IMapper _mapper;
         private readonly ICategoriaRepositorio _categoriaRepositorio;
 
-        public CriarCategoriaComandoHandler(IMapper mapper, ICategoriaRepositorio categoriaRepositorio)
+        public CriarCategoriaHandler(IMapper mapper, ICategoriaRepositorio categoriaRepositorio)
         {
             _mapper = mapper;
             _categoriaRepositorio = categoriaRepositorio;

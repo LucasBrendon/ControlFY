@@ -10,6 +10,8 @@ namespace ControlFY.Catalogo.Persistencia
         public static IServiceCollection ResolverDependenciasPersistencia(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<ICategoriaRepositorio, CategoriaRepositorio>();
+            services.AddTransient<IFornecedorRepositorio, FornecedorRepositorio>();
+            services.AddTransient<IProdutoRepositorio, ProdutoRepositorio>();
 
             return services;
         }

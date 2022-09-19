@@ -2,10 +2,7 @@
 using ControlFY.Catalogo.Aplicacao.Categorias.ViewModels;
 using ControlFY.Catalogo.Aplicacao.Comum.Contratos.Repositorio;
 using MediatR;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 

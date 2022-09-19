@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using ControlFY.Catalogo.Dominio.Entidades;
-using System;
+﻿using System;
 
 namespace ControlFY.Catalogo.Aplicacao.Categorias.ViewModels
 {

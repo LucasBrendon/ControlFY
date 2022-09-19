@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ControlFY.Catalogo.Aplicacao.Categorias.Comandos.Criar
 {
-    public class CriarCategoriaValidador : CriarCategoriaValidadorBase<CriarCategoriaComando>
+    public class CriarCategoriaValidador : CategoriaValidadorBase<CriarCategoriaComando>
     {
         public CriarCategoriaValidador() : base()
         {

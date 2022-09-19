@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace ControlFY.Catalogo.Aplicacao.Categorias.Comandos.Editar
 {
-    public class EditarCategoriaComandoHandler : IRequestHandler<EditarCategoriaComando, CategoriaViewModel>
+    public class EditarCategoriaHandler : IRequestHandler<EditarCategoriaComando, CategoriaViewModel>
     {
         private readonly IMapper _mapper;
         private readonly ICategoriaRepositorio _categoriaRepositorio;
 
-        public EditarCategoriaComandoHandler(IMapper mapper, ICategoriaRepositorio categoriaRepositorio)
+        public EditarCategoriaHandler(IMapper mapper, ICategoriaRepositorio categoriaRepositorio)
         {
             _mapper = mapper;
             _categoriaRepositorio = categoriaRepositorio;
