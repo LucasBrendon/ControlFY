@@ -1,17 +1,15 @@
 using ControlFY.Estoque.API.Config;
+using ControlFY.Estoque.API.Filtros;
+using ControlFY.Estoque.Persistencia;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
+using ControlFY.Estoque.Aplicacao.Produtos.Comandos.Editar;
 
 namespace ControlFY.Estoque.API
 {
@@ -28,8 +26,16 @@ namespace ControlFY.Estoque.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.ResolverDependencias(Configuration);
+            services.ResolverDependenciasPersistencia(Configuration);
 
             services.AddControllers();
+
+            services.AddHttpContextAccessor();
+            services
+                .AddMvc(options => options.Filters.Add(typeof(FiltroExcecao)))
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<EditarProdutoValidador>())
+                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ControlFY.Estoque.API", Version = "v1" });

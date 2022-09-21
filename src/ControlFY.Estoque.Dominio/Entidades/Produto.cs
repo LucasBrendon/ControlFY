@@ -29,9 +29,8 @@ namespace ControlFY.Estoque.Dominio.Entidades
             DataEntrada = DateTime.Now;
         }
 
-        public void AtualizarProduto(long produtoId, string nome, string descricao, decimal valor, int quantidade)
+        public void AtualizarProduto(string nome, string descricao, decimal valor, int quantidade)
         {
-            ProdutoId = produtoId;
             Nome = nome;
             Descricao = descricao;
             Valor = valor;

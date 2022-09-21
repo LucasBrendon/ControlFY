@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ControlFY.Estoque.Aplicacao\ControlFY.Estoque.Aplicacao.csproj" />
     <ProjectReference Include="..\ControlFY.Estoque.Dominio\ControlFY.Estoque.Dominio.csproj" />
   </ItemGroup>
 
