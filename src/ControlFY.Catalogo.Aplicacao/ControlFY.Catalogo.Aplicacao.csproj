@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Comum\Servicos\PublicarProdutoNaFilaServico.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Categorias\Notificacoes\" />
-    <Folder Include="Comum\Contratos\Servicos\" />
     <Folder Include="Fornecedores\Notificacoes\" />
     <Folder Include="Produtos\Consultas\ListarTodos\" />
     <Folder Include="Produtos\Notificacoes\" />
@@ -21,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ControlFY.Catalogo.Dominio\ControlFY.Catalogo.Dominio.csproj" />
+    <ProjectReference Include="..\ControlFY.Catalogo.Infraestrutura\ControlFY.Catalogo.Infraestrutura.csproj" />
   </ItemGroup>
 
 </Project>

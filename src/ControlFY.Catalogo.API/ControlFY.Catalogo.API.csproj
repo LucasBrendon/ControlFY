@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ControlFY.Catalogo.Infraestrutura\ControlFY.Catalogo.Infraestrutura.csproj" />
     <ProjectReference Include="..\ControlFY.Catalogo.Persistencia\ControlFY.Catalogo.Persistencia.csproj" />
   </ItemGroup>
 

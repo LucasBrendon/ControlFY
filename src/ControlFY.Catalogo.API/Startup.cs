@@ -3,20 +3,16 @@ using ControlFY.Catalogo.API.Filtros;
 using ControlFY.Catalogo.Persistencia;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using FluentValidation.AspNetCore;
 using ControlFY.Catalogo.Aplicacao.Categorias.Comandos.Criar;
 using Newtonsoft.Json;
+using ControlFY.Catalogo.Infraestrutura;
+using ControlFY.Catalogo.Aplicacao;
+using ControlFY.Catalogo.Infraestrutura.RabbitMq.Config;
 
 namespace ControlFY.Catalogo.API
 {
@@ -31,8 +27,12 @@ namespace ControlFY.Catalogo.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitConfig"));
+
             services.ResolverDependencias(Configuration);
             services.ResolverDependenciasPersistencia(Configuration);
+            services.ResolverDependenciasAplicacao(Configuration);
+            services.ResolverDependenciasInfraestrutura(Configuration);
 
             services.AddControllers();
 
