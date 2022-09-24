@@ -25,7 +25,7 @@ namespace ControlFY.Catalogo.API
         }
 
         public IConfiguration Configuration { get; }
-        ///
+
         [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
