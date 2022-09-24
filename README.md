@@ -1,2 +1,2 @@
 # ControlFY
- Sistema de gerenciamento de estoque
+ Sistema para gerenciamento de estoque.
