@@ -10,6 +10,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using ControlFY.Estoque.Aplicacao.Produtos.Comandos.Editar;
+using System;
+using ControlFY.Estoque.Infraestrutura.RabbitMq.Config;
+using ControlFY.Estoque.Aplicacao;
+using ControlFY.Estoque.Infraestrutura;
 
 namespace ControlFY.Estoque.API
 {
@@ -22,11 +26,15 @@ namespace ControlFY.Estoque.API
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitConfig"));
+
             services.ResolverDependencias(Configuration);
             services.ResolverDependenciasPersistencia(Configuration);
+            services.ResolverDependenciasAplicacao(Configuration);
+            services.ResolverDependenciasInfraestrutura(Configuration);
 
             services.AddControllers();
 

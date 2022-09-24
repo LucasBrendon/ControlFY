@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using ControlFY.Catalogo.Infraestrutura;
 using ControlFY.Catalogo.Aplicacao;
 using ControlFY.Catalogo.Infraestrutura.RabbitMq.Config;
+using System;
 
 namespace ControlFY.Catalogo.API
 {
@@ -25,6 +26,7 @@ namespace ControlFY.Catalogo.API
 
         public IConfiguration Configuration { get; }
 
+        [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<RabbitMqConfiguration>(Configuration.GetSection("RabbitConfig"));
